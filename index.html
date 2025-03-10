@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>i-Radio Player</title>
+  <title>iRadio Player</title>
   <style>
     /* General Styles */
     body {
@@ -16,6 +16,7 @@
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      flex-direction: column; /* Added to stack the image and player vertically */
     }
 
     /* Glassy Player Container */
@@ -91,9 +92,22 @@
         transform: translateY(0);
       }
     }
+
+    /* New Image Style */
+    .top-image {
+      width: 150px; /* Adjust as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 20px; /* Space between image and player */
+      border-radius: 10px; /* Optional: Add rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+    }
   </style>
 </head>
 <body>
+  <!-- New Image at the Top -->
+  <img src="https://od.lk/s/ODlfMzIxMjM4ODRf/pngwing.com%20%285%29.png" alt="Top Image" class="top-image">
+
+  <!-- Player Container -->
   <div class="player">
     <!-- Album Art -->
     <div class="album-art">
@@ -108,10 +122,10 @@
 
     <!-- Audio Player -->
     <audio controls>
-  <source src="https://stream.zeno.fm/jcbwrbmq7vlvv" type="audio/mpeg">
-  <source src="audio.ogg" type="audio/ogg">
-  Your browser does not support the audio tag.
-</audio>
+      <source src="https://stream.zeno.fm/jcbwrbmq7vlvv" type="audio/mpeg">
+      <source src="audio.ogg" type="audio/ogg">
+      Your browser does not support the audio tag.
+    </audio>
   </div>
 </body>
 </html>
